@@ -1,0 +1,16 @@
+CREATE DATABASE ng_games_db;
+
+USE ng_games_db;
+
+CREATE TABLE game (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    description VARCHAR(255) NOT NULL,
+    image VARCHAR(255) NOT NULL,
+    price DECIMAL(10,2) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+RENAME TABLE game TO games;
+
+DESCRIBE game;
