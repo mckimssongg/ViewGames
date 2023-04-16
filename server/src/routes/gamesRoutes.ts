@@ -9,8 +9,11 @@ class gamesRoutes {
     }
 
     config(): void {
-        this.router.get('/', gamesControllers.index);
+        this.router.get('/', gamesControllers.list);
+        this.router.get('/:id', gamesControllers.getOne);
         this.router.post('/', gamesControllers.create);
+        this.router.put('/:id', gamesControllers.update);
+        this.router.delete('/:id', gamesControllers.delete);
     }
 }
 
