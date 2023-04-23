@@ -1,22 +1,22 @@
-<div class="container">
+<div class="container cardRelative mb-4 row mx-auto">
     <div class="col-12 col-md-6 col-lg-4" *ngFor="let game of games">
-        <div class="card my-4" [style]="{'height': '23rem'}">
+        <div class="card my-4" [style]="{'height': '25rem'}">
             <img ngSrc="{{game.image}}" class="card-img-top object-fit-cover" alt="{{game.description}}"  width="150" height="150">
             <div class="card-body d-flex align-items-start flex-column">
                 <div class="card-title fs-4">
                     {{game.name}}
                 </div>
-                <div class="card-text fs-5">
+                <div class="card-text fs-5 divDescription">
                     {{game.description}}
                 </div>
-                <div class="card-text mt-auto">
+                <div class="card-text mt-auto ">
                     <span class="badge bg-primary">Q {{game.price}}</span>
                 </div>
             </div>
-            <div class="card-footer text-end">
-                <a href="/games/edit/{{game.id}}" class="btn btn-outline-primary">Edit</a>
+            <div class="card-footer text-end d-flex justify-content-center">
+                <button  (click)="updateGame(game.id || 0)" class="btn btn-outline-primary p-0  px-3 btn-sm"><i class="bi bi-pencil-square"></i> Edit</button>
                 &nbsp;
-                <a href="/games/delete/{{game.id}}" class="btn btn-outline-danger">Delete</a>
+                <button (click)="deleteGame(game.id || 0)" class="btn btn-danger p-1 btn-sm btnAbsDelete"><i class="bi bi-trash-fill"></i> Delete</button>
             </div>
         </div>
     </div>

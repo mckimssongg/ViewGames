@@ -29,7 +29,14 @@ export class GamesService {
   } 
 
   updateGame(game: IGame): Observable<IGame> {
-    return this.http.put(`${this.API_URI}/games/${game.id}`, game);
+    if (game.id == null || game.id == undefined || game.id <= 0) {
+      // return observable with error
+      return new Observable<IGame>((observer) => {
+        observer.error("Invalid Game");
+      });
+    }
+    else{
+      return this.http.put(`${this.API_URI}/games/${game.id}`, game);
+    }
   }
-    
 }

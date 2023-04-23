@@ -1,0 +1,8 @@
+.divDescription {
+    height: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    hyphens: auto;
+    word-wrap: break-word;
+}

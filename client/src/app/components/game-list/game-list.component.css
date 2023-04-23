@@ -1,0 +1,19 @@
+.cardRelative{
+    position: relative;
+}
+
+.btnAbsDelete{
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    z-index: 1;
+}
+
+.divDescription {
+    height: 90px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    hyphens: auto;
+    word-wrap: break-word;
+}
